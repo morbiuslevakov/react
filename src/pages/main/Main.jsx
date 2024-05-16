@@ -12,10 +12,10 @@ export const Main = () => {
                 <div>
                     <Box style={{"display":"grid"}}>
                         <h1 style={{"fontSize": "5rem", "textAlign":"left", "color": "white", "float":"left"}} className="main-title">yusra</h1>
-                        <h3 style={{"fontSize": "3rem", "textAlign":"right", "color": "white", "float":"right"}} className="main-title">.team</h3>
+                        <h3 style={{"fontSize": "3rem", "textAlign":"right", "color": "white", "float":"right"}} className="main-title">.community</h3>
                     </Box>
                     <Box className="main-block-subtitle" style={{"display":"block", "width":"100%", "max-width":"1100px"}}>
-                        <Typography style={{"fontSize": "1.75rem", "fontWeight":300, "fontFamily":"Montserrat, sans-serif", "color": "white", "float":"right", "marginTop":"80px"}}>What is YusraTeam</Typography>
+                        <Typography style={{"fontSize": "1.75rem", "fontWeight":300, "fontFamily":"Montserrat, sans-serif", "color": "white", "float":"right", "marginTop":"80px"}}>What is YusraCommunity</Typography>
                     </Box>
                 </div>
             </Stack>
@@ -23,7 +23,7 @@ export const Main = () => {
                 <Box style={{"padding":"20px"}}>
                     <Box style={{"float": "right", "borderRight": "4px solid #00a575", "padding": "24px 30px"}}>
                         <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
-                            YusraTeam — это высококвалифицированная, анонимная и независимая команда разработчиков. Команда не предоставляет финансовые консультации и не связана с другими криптокомпаниями. Мы открыты для новых идеи и работаем исключительно в интересах криптосообщества.
+                            YusraCommunity — это высококвалифицированная, анонимная и независимая команда разработчиков и крипто-энтузиастов. Команда не предоставляет финансовые консультации и не связана с другими криптокомпаниями. Мы открыты для новых идеи и работаем исключительно в интересах криптосообщества.
                         </Typography>
                     </Box>
                 </Box>
