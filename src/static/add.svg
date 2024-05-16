@@ -1,0 +1,10 @@
+<svg class="svg-circle-button" width="80px" height="80px" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_5_11)">
+<path id="Icon-Set-Filled" fill-rule="evenodd" clip-rule="evenodd" d="M32 64C49.673 64 64 49.673 64 32C64 14.3269 49.673 0 32 0C14.3269 0 0 14.3269 0 32C0 49.673 14.3269 64 32 64ZM34.4 22.4C34.4 21.0745 33.3254 20 32 20C30.6746 20 29.6 21.0745 29.6 22.4V29.6H22.4C21.0745 29.6 20 30.6746 20 32C20 33.3254 21.0745 34.4 22.4 34.4H29.6V41.6C29.6 42.9254 30.6746 44 32 44C33.3254 44 34.4 42.9254 34.4 41.6V34.4H41.6C42.9254 34.4 44 33.3254 44 32C44 30.6746 42.9254 29.6 41.6 29.6H34.4V22.4Z" fill="#717171"/>
+</g>
+<defs>
+<clipPath id="clip0_5_11">
+<rect width="64" height="64" fill="white"/>
+</clipPath>
+</defs>
+</svg>
