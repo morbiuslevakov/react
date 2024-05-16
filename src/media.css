@@ -1,0 +1,205 @@
+/* Стили для мобильных устройств (ширина экрана до 420px) */
+@media only screen and (max-width: 420px) {
+    .circle-button {
+        width: 35px!important;
+        height: 35px!important;
+    }
+    .header__logo.svelte-d56avp {
+        top: 330px;
+        width: 210px!important;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .main-block {
+        /*padding: 0 30px;*/
+        align-items: end!important;
+    }
+    .telegram-card-header-text {
+        font-size: 1.5rem!important;
+    }
+    .bot__card-img.svelte-dpmec9.svelte-dpmec9 {
+        right: 0!important;
+        bottom: 80px!important;
+        width: 260px!important;
+    }
+    .telegram-card-description {
+        padding: 10px 25px!important;
+        row-gap: 180px!important;
+    }
+    .circle-button {
+        width: 50px!important;
+        height: 50px!important;
+    }
+    .css-1e4ubfd-MuiTypography-root {
+        font-size: 2rem!important;
+    }
+    .css-194orsr-MuiTypography-root {
+        font-size: 1rem!important;
+    }
+    .css-1xsigxp-MuiTypography-root {
+        font-size: 0.75rem!important;
+    }
+}
+
+/* Стили для мобильных устройств (ширина экрана до 490px) */
+@media only screen and (min-width: 420px) and (max-width: 490px) {
+    .header__logo.svelte-d56avp {
+        top: 330px;
+        width: 250px!important;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .main-block-wrapper {
+        padding-bottom: 80px;
+    }
+}
+
+@media only screen and (min-width: 490px) and (max-width: 599px) {
+    .header__logo.svelte-d56avp {
+        top: 310px;
+        width: 250px!important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .telegram-card-description {
+        padding: 0 25px;
+        row-gap: 200px;
+    }
+    .circle-button {
+        width: 40px!important;
+        height: 40px!important;
+    }
+    .css-1e4ubfd-MuiTypography-root {
+        font-size: 1.5rem!important;
+    }
+    .telegram-card-wrapper {
+        padding: 0 25px 0 12px!important;
+    }
+    .css-lo6gtb-MuiTypography-root.subtitle {
+        font-size: 1rem!important;
+    }
+    .css-lo6gtb-MuiTypography-root {
+        font-size: 1.5rem!important;
+    }
+    .yusra-icon-grey {
+        width: 22px;
+        height: 22px;
+    }
+    .question-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Стили для мобильных устройств (ширина экрана до 767px) */
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    .header__logo.svelte-d56avp {
+        top: 240px;
+        width: 280px!important;
+    }
+}
+
+/* Стили для планшетов (ширина экрана от 768px до 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .telegram-card-description {
+        padding: 10px 40px;
+        row-gap: 200px;
+    }
+    .circle-button {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .bot__card-img.svelte-dpmec9.svelte-dpmec9 {
+        right: -15px;
+        bottom: 90px!important;
+        width: 320px;
+    }
+    .bot_card.svelte-dpmec9.svelte-dpmec9 {
+        padding: 0 50px 0 25px;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 800px) {
+    .header__logo.svelte-d56avp {
+        top: 180px!important;
+        width: 300px!important;
+    }
+}
+
+@media screen and (max-width: 956px) {
+    .telegram-card-description-button {
+        display: flex;
+    }
+    .telegram-card-header-button {
+        display: none;
+    }
+    .telegram-card-wrapper {
+        padding: 0 50px 0 25px;
+    }
+    .tg-qr {
+        display: none;
+    }
+    .bot__card-img.svelte-dpmec9.svelte-dpmec9 {
+        right: -15px;
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 956px) {
+    .header__logo.svelte-d56avp {
+        top: 240px;
+        width: 370px;
+    }
+}
+
+@media only screen and (min-width: 956px) {
+    .header__logo.svelte-d56avp {
+        top: 240px;
+        width: 370px;
+    }
+}
+
+/* Стили для небольших ноутбуков и десктопов (ширина экрана от 1024px до 1279px) */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    .header__logo.svelte-d56avp {
+        top: 240px;
+        width: 410px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    .circle-button {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Стили для стандартных ноутбуков и десктопов (ширина экрана от 1280px и более) */
+@media only screen and (min-width: 1280px) {
+    .header__logo.svelte-d56avp {
+        top: 240px;
+        width: 460px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .css-1e4ubfd-MuiTypography-root {
+        font-size: 2.5rem;
+    }
+    .css-lo6gtb-MuiTypography-root {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 1279px) {
+    .circle-button {
+        width: 70px;
+        height: 70px;
+    }
+}

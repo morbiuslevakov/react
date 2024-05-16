@@ -1,0 +1,8 @@
+version: "3"
+services:
+  app:
+    container_name: yusra-swap
+    build: .
+    ports:
+      - "9000:9000"
+    restart: always
