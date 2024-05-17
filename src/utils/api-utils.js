@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = "https://api.yusra.community";
+const apiUrl = "http://api.yusra.community";
 
 export const apiConfig = {
     withCredentials: true,
