@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { sendTokens } from '../utils/api-utils';
 import { useWallet } from "./use-wallet";
 import { PublicKey } from "@solana/web3.js";
+import { Address } from '@ton/core';
 
 export const useWithdraw = () => {
     const { data, user } = useWallet();
     const [address, setAddress] = useState("");
     const [amount, setAmount] = useState("");
+    const [memo, setMemo] = useState("");
     const [isValidAddress, setIsValidAddress] = useState(true);
     const [isValidAmount, setIsValidAmount] = useState(true);
     const [isError, setIsError] = useState(false);
@@ -17,7 +19,7 @@ export const useWithdraw = () => {
         e.preventDefault();
 
         try {
-            new PublicKey(address);
+            Address.parse(address);
             setIsValidAddress(true);
         } catch (error) {
             setIsValidAddress(false);
@@ -49,6 +51,10 @@ export const useWithdraw = () => {
         }
     }
 
+    const handleChangeMemo = (e) => {
+        setMemo(e.target.value);
+    }
+
     const handleChangeAmount = (e) => {
         if (e.target.value < 0) {
             setIsValidAmount(false);
@@ -74,12 +80,14 @@ export const useWithdraw = () => {
 
     const changeHandlers = {
         address: handleChangeAddress,
-        amount: handleChangeAmount
+        amount: handleChangeAmount,
+        memo: handleChangeMemo
     }
 
     const states = {
         address,
         amount,
+        memo,
         isValidAddress,
         isValidAmount,
         isError,
