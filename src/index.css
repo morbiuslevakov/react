@@ -11,6 +11,10 @@ body {
   background-attachment: fixed;
 }
 
+.css-zxcxs3-MuiTable-root {
+    min-width: unset!important;
+}
+
 @font-face {
     font-family: 'Yusra';
     src: url('./static/Yusra-Regular.woff2') format('woff2')
@@ -53,11 +57,11 @@ code {
     width: 100%;
     /*min-height: 50vh;*/
     max-width: inherit;
-    background-color: #00a575;
+    background-color: #004444;
 }
 
 a {
-  color: #00a575;
+  color: #004444;
   text-decoration: none;
 }
 
@@ -132,7 +136,7 @@ a {
     padding: 20px;
     display: inline-flex;
     background-color: #F2F3F7;
-    border: 1px solid #00a575;
+    border: 1px solid #004444;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -167,7 +171,7 @@ input[type="number"] {
 
 .tg-qr {
     border-radius: 50%;
-    border: 3px solid #00a575;
+    border: 3px solid #004444;
 }
 .telegram-card-wrapper {
     padding: 60px 280px 86px 60px;
@@ -176,7 +180,7 @@ input[type="number"] {
     position: relative;
     width: 100%;
     background-color: #ffffff;
-    border: 3px solid #00a575;
+    border: 3px solid #004444;
     border-radius: 66px;
     box-sizing: border-box;
     padding: 36px 0;
@@ -195,7 +199,7 @@ input[type="number"] {
     display: none;
 }
 .shadow.svelte-1na1a25 {
-    box-shadow: 0 20px 30px -10px #00a5754d;
+    box-shadow: 0 20px 30px -10px #0044444d;
     transition: box-shadow .2s ease;
 }
 .primary.svelte-1na1a25 {
@@ -204,7 +208,7 @@ input[type="number"] {
 .primary.svelte-1na1a25 {
     color: #ffffff;
     border: 1px solid #ffffff;
-    background-color: #00a575;
+    background-color: #004444;
 }
 .link.svelte-1na1a25 {
     margin: auto;

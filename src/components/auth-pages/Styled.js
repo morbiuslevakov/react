@@ -14,7 +14,7 @@ export const ErrorBox = styled(Box)({
 export const SubmitButton = styled(Button)({
   textTransform: "capitalize",
   width: '100%',
-  backgroundColor: "#00a575",
+  backgroundColor: "#004444",
   height: "48px",
   "&:hover": {
     backgroundColor: "#764ba2"

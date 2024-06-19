@@ -8,7 +8,7 @@ export const HeaderWrapper = styled('header')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
-  backgroundColor: "#00a575",
+  backgroundColor: "#004444",
   zIndex: 100
 }))
 

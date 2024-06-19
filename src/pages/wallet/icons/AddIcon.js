@@ -5,7 +5,8 @@ import {Box, styled} from "@mui/material";
 export const AddIcon = () => {
     return (
         <LogoWrapper>
-            <AddAppIcon className={"circle-button"} />
+            <AddAppIcon style={{display: "block"}} className={"circle-button"}/>
+            <span style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} >Ввод</span>
         </LogoWrapper>
     )
 }
@@ -13,5 +14,6 @@ export const AddIcon = () => {
 const LogoWrapper = styled(Box)({
     display: "inline-block",
     "margin-left": "20px",
-    cursor: "pointer"
+    cursor: "pointer",
+    textAlign: "center"
 })

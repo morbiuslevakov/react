@@ -45,7 +45,7 @@
     display: grid;
     row-gap: 50px;
     width: 100%;
-    border: 3px solid #ffffff;
+    border: 2px solid #717171;
     border-radius: 25px;
     background-color: rgba(255,255,255,var(--transparency));
     -webkit-backdrop-filter: blur(5px);
@@ -121,7 +121,7 @@
 .header__subtitle.svelte-16udaz {
     font-size: 20px;
     font-weight: 400;
-    color: #00a575
+    color: #004444
 }
 
 @media (min-width: 480px) {

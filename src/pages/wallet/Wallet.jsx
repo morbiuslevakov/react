@@ -36,8 +36,8 @@ export const Wallet = () => {
                         <DefaultCard className={"glass svelte-10w51t0 wallet-card"}>
                             <CardContent style={{"display":"block"}}>
                                 <Stack className={"actions-block balance"}>
-                                    <Typography className="title" style={{"color":"#00a575", "fontFamily":"Montserrat, sans-serif", "display":"flex", "alignItems":"baseline"}} fontSize={"3rem"}>{data.total}</Typography>
-                                    <Typography className="subtitle" style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>Баланс YUSRA</Typography>
+                                    <Typography className="title" style={{"color":"#004444", "fontFamily":"Montserrat, sans-serif", "display":"flex", "alignItems":"baseline"}} fontSize={"3rem"}>{data.total}</Typography>
+                                    <Typography className="subtitle" style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>Баланс YSR</Typography>
                                 </Stack>
                                 <Stack className={"actions-block transactions"}>
                                     <Link to={"/withdraw"}>

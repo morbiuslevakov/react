@@ -24,7 +24,7 @@ export const MobileMenu = ({ isLogged }) => {
             <Stack justifyContent={'space-between'} height={'100%'}>
                 <Box>
                     <Typography px={2} pb={1} fontWeight={500}>Меню</Typography>
-                    <Divider sx={{ backgroundColor: '#00a575', mx: 2 }} />
+                    <Divider sx={{ backgroundColor: '#004444', mx: 2 }} />
                     <List>
                         <Stack gap={1} pt={1}>
                             <ListItem disablePadding>

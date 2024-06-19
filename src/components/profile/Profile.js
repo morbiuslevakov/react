@@ -69,7 +69,7 @@ export const Profile = ({ user }) => {
                     <div className={"avatar"}></div>
                 </Stack>
                 <Stack style={{"width":"100%", "display":"flex", "alignItems":"center", "marginTop":"10px"}}>
-                    <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>{user.email}</Typography>
+                    <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>логин: {user.email}</Typography>
                     <form onSubmit={handleSubmit}>
                         <FormError isError={isError} errorMessage={errorMessage} />
                         <TextField id="oldPassword" style={{"width":"100%", "marginTop":"10px"}} onChange={(event) => { setOldPassword(event.target.value) }} value={oldPassword} type="text" placeholder="Старый пароль"/>

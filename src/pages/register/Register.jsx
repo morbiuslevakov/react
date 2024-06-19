@@ -46,11 +46,11 @@ export const Register = () => {
                 </Stack>
                 <Infographic titleFloat="left" textFloat="left" title="about"
                              text="Yusra была сформирована в 2024 году активными сторонниками мира WEB3 технологий. Вместе с сообществом мы можем создавать лучшие продукты DeFi на мировом рынке. Мы открыты к сотрудничеству и рады принять новых членов команды. Присоединяйся к нам, чтобы создать будущее WEB3."/>
-                <Stack style={{"width":"100%", "alignItems":"center"}} mt={10} gap={7}>
-                    <Box style={{"width": "100%"}}>
-                        <TelegramCard />
-                    </Box>
-                </Stack>
+                {/*<Stack style={{"width":"100%", "alignItems":"center"}} mt={10} gap={7}>*/}
+                {/*    <Box style={{"width": "100%"}}>*/}
+                {/*        <TelegramCard />*/}
+                {/*    </Box>*/}
+                {/*</Stack>*/}
             </PageContent>
         </Wrapper>
     );
