@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { sendTokens } from '../utils/api-utils';
 import { useWallet } from "./use-wallet";
 import { PublicKey } from "@solana/web3.js";
-// import { Address } from '@ton/core';
+import { Address } from '@ton/core';
 
 export const useWithdraw = () => {
     const { data, user } = useWallet();
