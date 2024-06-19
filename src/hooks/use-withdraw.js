@@ -33,7 +33,7 @@ export const useWithdraw = () => {
             return;
         }
 
-        const formData = JSON.stringify({ address: address, amount: amount })
+        const formData = JSON.stringify({ address: address, amount: amount, memo: memo })
 
         sendTokens(formData).then().catch(error => {
             setErrorMessage(error);
