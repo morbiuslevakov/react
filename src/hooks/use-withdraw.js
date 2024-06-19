@@ -19,7 +19,7 @@ export const useWithdraw = () => {
         e.preventDefault();
 
         try {
-            // Address.parse(address);
+            Address.parse(address);
             setIsValidAddress(true);
         } catch (error) {
             setIsValidAddress(false);
@@ -39,6 +39,9 @@ export const useWithdraw = () => {
             setErrorMessage(error);
             setIsError(true);
         })
+        setAddress("");
+        setAmount("");
+        setMemo("");
     };
 
     const handleChangeAddress = (e) => {
