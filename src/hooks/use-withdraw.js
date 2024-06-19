@@ -18,13 +18,13 @@ export const useWithdraw = () => {
     const handleWithdraw = (e) => {
         e.preventDefault();
 
-        try {
-            // Address.parse(address);
-            setIsValidAddress(true);
-        } catch (error) {
-            setIsValidAddress(false);
-            return;
-        }
+        // try {
+        //     // Address.parse(address);
+        //     setIsValidAddress(true);
+        // } catch (error) {
+        //     setIsValidAddress(false);
+        //     return;
+        // }
 
         if (amount === "" || amount === null || address === "" || address === null) {
             setIsValidAddress(false);
@@ -47,7 +47,7 @@ export const useWithdraw = () => {
     const handleChangeAddress = (e) => {
         setAddress(e.target.value);
         try {
-            new PublicKey(e.target.value);
+            // new PublicKey(e.target.value);
             setIsValidAddress(true);
         } catch (error) {
             setIsValidAddress(false);
