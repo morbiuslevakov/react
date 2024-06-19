@@ -36,6 +36,7 @@ export const Withdraw = () => {
                                     <Stack style={{"width":"100%", "display":"flex", "alignItems":"start"}}>
                                         <TextField style={{"width":"100%", "marginTop":"10px"}} onChange={(e) => { changeHandlers.address(e) }} error={!states.isValidAddress} helperText={states.isValidAddress ? "" : "Неверный адрес"} value={states.address} type="text" placeholder="Адрес"/>
                                         <TextField style={{"width":"100%", "marginTop":"10px"}} onChange={(e) => { changeHandlers.amount(e) }} error={!states.isValidAmount} helperText={states.amountErrorMessage} value={states.amount} type="number" placeholder="Сумма вывода"/>
+                                        <TextField style={{"width":"100%", "marginTop":"10px"}} onChange={(e) => { changeHandlers.memo(e) }} value={states.memo} type="text" placeholder="Мемо-фраза"/>
                                         <Typography className="subtitle" style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "marginTop":"10px"}} fontSize={"1rem"}>
                                             Доступно: {data.free} YUSRA
                                         </Typography>
