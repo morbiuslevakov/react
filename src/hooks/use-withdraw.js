@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { sendTokens } from '../utils/api-utils';
 import { useWallet } from "./use-wallet";
 import { PublicKey } from "@solana/web3.js";
 // import { Address } from '@ton/core';
 
 export const useWithdraw = () => {
+    const navigate = useNavigate();
     const { data, user } = useWallet();
     const [address, setAddress] = useState("");
     const [amount, setAmount] = useState("");
@@ -42,6 +44,7 @@ export const useWithdraw = () => {
         setAddress("");
         setAmount("");
         setMemo("");
+        navigate("/history");
     };
 
     const handleChangeAddress = (e) => {
