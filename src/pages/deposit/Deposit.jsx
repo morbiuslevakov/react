@@ -25,10 +25,10 @@ export const Deposit = () => {
     }
 
     const rows = [
-        createData('1', "по 1% в месяц"),
-        createData('2', "по 2% в месяц"),
-        createData('3', "по 3% в месяц"),
-        createData('4', "по 4% в месяц")
+        createData('1', "по 1% каждый месяц"),
+        createData('2', "по 2% каждый месяц"),
+        createData('3', "по 3% каждый месяц"),
+        createData('4', "по 4% каждый месяц")
     ];
 
     if (!user) {
@@ -60,7 +60,7 @@ export const Deposit = () => {
                             </CardContent>
                         </DefaultCard>
                     </Stack>
-                    <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", "marginRight":"auto"}} fontSize={"1.5rem"}>
+                    <Typography style={{"color":"#000000", "fontFamily":"Montserrat, sans-serif", "display":"block", "marginRight":"auto"}} fontSize={"1.5rem"}>
                         Периоды разморозки токенов YSR
                     </Typography>
                     <TableContainer component={Paper}>
@@ -84,9 +84,9 @@ export const Deposit = () => {
                         </Table>
                     </TableContainer>
                     <Infographic titleFloat="right" textFloat="left" title="Swap"
-                                 text="уважаемые пользователи, просим обратить внимание на то, что при переводе токенов YUSRA на Waves адрес, токены будут сожжены а вместо них вы получите обновленный токен YUSRA в сети TON в соотношении 1 к 1"/>
+                                 text="Уважаемые пользователи, просим обратить внимание на то, что при переводе токенов YUSRA на Waves адрес, токены будут сожжены безвозвратно а вместо них вы получите обновленный токен YUSRA в сети TON в соотношении 1 к 1"/>
                     <Infographic titleFloat="left" textFloat="left" title="Freeze"
-                                 text="из обменянных токенов в первый месяц к выводу будет доступен 1%, остальные токены будут заморожены. Токены будут размораживаться в 4 этапа с момента свапа, по 1/2/3/4% в месяц в первый, второй, третий и четвертый год соответсвенно"/>
+                                 text="Из обменянных токенов в первый месяц к выводу будет доступен 1%, остальные токены будут заморожены. Токены будут размораживаться в 4 этапа с момента свапа, по 1/2/3/4% в месяц в первый, второй, третий и четвертый год соответсвенно"/>
                 </PageContent>
             </SnackbarProvider>
         </Wrapper>

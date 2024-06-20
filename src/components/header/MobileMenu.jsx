@@ -1,10 +1,24 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Stack, Typography } from "@mui/material";
+import {
+    Box,
+    Button,
+    Divider,
+    Drawer,
+    IconButton,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Stack,
+    Typography
+} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import UserContext from '../../context/user-context';
+import {useMediaQueryHook} from "../../hooks/use-media-query";
 
 export const MobileMenu = ({ isLogged }) => {
+    const isMobile = useMediaQueryHook('sm')
     const { logout } = useContext(UserContext);
     const [open, setOpen] = useState(false);
     const navigate = useNavigate()
@@ -35,11 +49,6 @@ export const MobileMenu = ({ isLogged }) => {
                                     <ListItemText className="menu-links" primary={"Главная"} />
                                 </ListItemButton>
                             </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/explorer") }}>
-                                    <ListItemText className="menu-links" primary={"Обзор"} />
-                                </ListItemButton>
-                            </ListItem>
                             {isLogged &&
                                 <ListItem disablePadding>
                                     <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/wallet") }}>
@@ -48,10 +57,23 @@ export const MobileMenu = ({ isLogged }) => {
                                 </ListItem>
                             }
                             <ListItem disablePadding>
+                                <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/explorer") }}>
+                                    <ListItemText className="menu-links" primary={"Обзор"} />
+                                </ListItemButton>
+                            </ListItem>
+                            <ListItem disablePadding>
                                 <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/faq") }}>
                                     <ListItemText className="menu-links" primary={"FAQ"} />
                                 </ListItemButton>
                             </ListItem>
+                            {!isLogged && !isMobile && window.location.pathname !== "/register" && window.location.pathname !== "/login" && window.location.pathname !== "/forget-password" ?
+                                <ListItem disablePadding>
+                                    <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/register") }}>
+                                        <ListItemText className="menu-links" primary={"Регистрация"} />
+                                    </ListItemButton>
+                                </ListItem> : null
+                                // <Button style={{"minWidth":"200px"}} variant="outlined" onClick={handleClickRegister}>Регистрация</Button> : null
+                            }
                         </Stack>
                     </List>
                 </Box>
