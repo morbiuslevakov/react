@@ -58,37 +58,29 @@ export const MobileMenu = ({ isLogged }) => {
                                     <ListItemText className="menu-links" primary={"Обзор"} />
                                 </ListItemButton>
                             </ListItem>
-                            {!isLogged && !isMobile && window.location.pathname !== "/register" && window.location.pathname !== "/login" && window.location.pathname !== "/forget-password" ?
-                                <ListItem disablePadding>
-                                    <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/register") }}>
-                                        <ListItemText className="menu-links" primary={"Регистрация"} />
-                                    </ListItemButton>
-                                </ListItem> : null
-                                // <Button style={{"minWidth":"200px"}} variant="outlined" onClick={handleClickRegister}>Регистрация</Button> : null
-                            }
                             <ListItem disablePadding>
                                 <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/faq") }}>
                                     <ListItemText className="menu-links" primary={"FAQ"} />
                                 </ListItemButton>
                             </ListItem>
+                            {isLogged ?
+                                <ListItem disablePadding>
+                                    <ListItemButton sx={{ paddingY: 0 }} onClick={handleLogout}>
+                                        {/*<ListItemIcon>*/}
+                                        {/*    <ExitIcon />*/}
+                                        {/*</ListItemIcon>*/}
+                                        <ListItemText primary={'Выход'} />
+                                    </ListItemButton>
+                                </ListItem> :
+                                <ListItem disablePadding>
+                                    <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/register") }}>
+                                        <ListItemText className="menu-links" primary={"Регистрация"} />
+                                    </ListItemButton>
+                                </ListItem>
+                            }
                         </Stack>
                     </List>
                 </Box>
-                {isLogged ?
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ paddingY: 0 }} onClick={handleLogout}>
-                            {/*<ListItemIcon>*/}
-                            {/*    <ExitIcon />*/}
-                            {/*</ListItemIcon>*/}
-                            <ListItemText primary={'Выход'} />
-                        </ListItemButton>
-                    </ListItem> :
-                    <ListItem disablePadding>
-                        <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/register") }}>
-                            <ListItemText className="menu-links" primary={"Регистрация"} />
-                        </ListItemButton>
-                    </ListItem>
-                }
             </Stack>
         </Box>
     )
