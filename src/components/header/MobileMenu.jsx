@@ -43,9 +43,6 @@ export const MobileMenu = ({ isLogged }) => {
                         <Stack gap={1} pt={1}>
                             <ListItem disablePadding>
                                 <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/") }}>
-                                    {/*<ListItemIcon>*/}
-                                    {/*    {item.icon}*/}
-                                    {/*</ListItemIcon>*/}
                                     <ListItemText className="menu-links" primary={"Главная"} />
                                 </ListItemButton>
                             </ListItem>
@@ -61,11 +58,6 @@ export const MobileMenu = ({ isLogged }) => {
                                     <ListItemText className="menu-links" primary={"Обзор"} />
                                 </ListItemButton>
                             </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/faq") }}>
-                                    <ListItemText className="menu-links" primary={"FAQ"} />
-                                </ListItemButton>
-                            </ListItem>
                             {!isLogged && !isMobile && window.location.pathname !== "/register" && window.location.pathname !== "/login" && window.location.pathname !== "/forget-password" ?
                                 <ListItem disablePadding>
                                     <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/register") }}>
@@ -74,6 +66,11 @@ export const MobileMenu = ({ isLogged }) => {
                                 </ListItem> : null
                                 // <Button style={{"minWidth":"200px"}} variant="outlined" onClick={handleClickRegister}>Регистрация</Button> : null
                             }
+                            <ListItem disablePadding>
+                                <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/faq") }}>
+                                    <ListItemText className="menu-links" primary={"FAQ"} />
+                                </ListItemButton>
+                            </ListItem>
                         </Stack>
                     </List>
                 </Box>
