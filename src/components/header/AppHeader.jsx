@@ -37,9 +37,9 @@ export const AppHeader = () => {
                         {!isMobile && <HeaderMenu isLogged={isLogged} />}
                     </Stack>
                     {isMobile && <MobileMenu isLogged={isLogged} />}
-                    {/*{!isLogged && !isMobile && window.location.pathname !== "/register" && window.location.pathname !== "/login" && window.location.pathname !== "/forget-password" ?*/}
-                    {/*    <Button style={{"minWidth":"200px"}} variant="outlined" onClick={handleClickRegister}>Регистрация</Button> : null*/}
-                    {/*}*/}
+                    {!isLogged && !isMobile && window.location.pathname !== "/register" && window.location.pathname !== "/login" && window.location.pathname !== "/forget-password" ?
+                        <Button style={{"minWidth":"200px"}} variant="outlined" onClick={handleClickRegister}>Регистрация</Button> : null
+                    }
                     {user && !isMobile ?
                         <Stack onClick={handleLogout} flexDirection="row" gap={10}>
                             <LogoutIcon />
