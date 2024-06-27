@@ -15,7 +15,7 @@ export const CopyIcon = ({ text }) => {
     }
 
     const tooltipText = copied ? "Скопировано" : "Скопировать"
-    const copyIcon = copied ? <DoneIcon fontSize='small' color='primary' /> : <ContentCopyIcon fontSize='small' color='primary' />
+    const copyIcon = copied ? <DoneIcon fontSize='small' color='#717171' /> : <ContentCopyIcon fontSize='small' color='#717171' />
 
     return <Tooltip title={tooltipText}>
         <IconButton onClick={handleCopy}>
