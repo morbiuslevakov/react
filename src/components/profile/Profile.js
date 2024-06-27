@@ -72,7 +72,7 @@ export const Profile = ({ user }) => {
                 <Stack style={{"width":"100%", "display":"flex", "alignItems":"center", "marginTop":"10px"}}>
                     <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>Ваша реферальная ссылка: </Typography>
                     <Stack flexDirection={'row'} alignItems={'center'} gap={1}>
-                        <Typography sx={{ wordBreak: 'break-all' }}>{`register?referrer=${user.id}`}</Typography>
+                        <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} sx={{ wordBreak: 'break-all' }}>{`register?referrer=${user.id}`}</Typography>
                         <CopyIcon text={`https://swap.yusra.community/register?referrer=${user.id}`} />
                     </Stack>
                 </Stack>
