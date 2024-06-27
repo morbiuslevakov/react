@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { signup } from '../utils/api-utils';
 import { authErrorMessages } from '../constants/auth';
 
@@ -26,7 +26,11 @@ export const useRegister = () => {
       setIsError(false);
     }
 
-    const formData = JSON.stringify({ email: email, password: password })
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const referrer = searchParams.get('referrer');
+
+    const formData = JSON.stringify({ email: email, password: password, referrer: referrer })
 
     signup(formData).then(() => navigate("/login", { state: { email: email } })).catch(error => {
       setErrorMessage(error);

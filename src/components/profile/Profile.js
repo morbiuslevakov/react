@@ -4,7 +4,8 @@ import { DefaultCard, CardContent } from "../../pages/Styled";
 import { CustomButton } from '../CustomButton';
 import { changePassword } from "../../utils/api-utils";
 import { FormError } from "../auth-pages/FormError";
-import {useSnackbar} from "notistack";
+import { useSnackbar } from "notistack";
+import {CopyIcon} from "../../pages/wallet/icons/CopyIcon";
 
 export const Profile = ({ user }) => {
     const { enqueueSnackbar } = useSnackbar();
@@ -67,6 +68,13 @@ export const Profile = ({ user }) => {
             <CardContent style={{"display":"flex", "alignItems":"center"}}>
                 <Stack className={"actions-block balance"}>
                     <div className={"avatar"}></div>
+                </Stack>
+                <Stack style={{"width":"100%", "display":"flex", "alignItems":"center", "marginTop":"10px"}}>
+                    <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>Ваша реферальная ссылка: </Typography>
+                    <Stack flexDirection={'row'} alignItems={'center'} gap={1}>
+                        <Typography sx={{ wordBreak: 'break-all' }}>{`register?referrer=${user.id}`}</Typography>
+                        <CopyIcon text={`https://swap.yusra.community/register?referrer=${user.id}`} />
+                    </Stack>
                 </Stack>
                 <Stack style={{"width":"100%", "display":"flex", "alignItems":"center", "marginTop":"10px"}}>
                     <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>логин: {user.email}</Typography>
