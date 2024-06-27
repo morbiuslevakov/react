@@ -12,7 +12,7 @@ export const useRegister = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showPassword, setShowPassword] = useState(true);
 
-  const handleRegister = (e) => {
+  const handleRegister = (e, referrer) => {
     e.preventDefault();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setIsError(true);
@@ -25,10 +25,6 @@ export const useRegister = () => {
     } else {
       setIsError(false);
     }
-
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const referrer = searchParams.get('referrer');
 
     const formData = JSON.stringify({ email: email, password: password, referrer: referrer })
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {Navigate} from "react-router-dom";
+import {Navigate, useLocation} from "react-router-dom";
 import {Box, InputLabel, Stack, Typography} from "@mui/material";
 import { CardContent, CustomInput, PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import { RedirectLink } from "../../components/auth-pages/RedirectLink";
@@ -13,6 +13,9 @@ import {Infographic} from "../../components/infogrphic/Infographic";
 import {TelegramCard} from "../../components/telegram-card/TelegramCard";
 
 export const Register = () => {
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const referrer = searchParams.get('referrer');
     const { states, changeHandlers, handleRegister, togglePasswordVisible } = useRegister();
     const { user } = useContext(UserContext);
 
@@ -27,7 +30,7 @@ export const Register = () => {
                     <DefaultCard className={"glass svelte-10w51t0"}>
                         <CardContent>
                             <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "margin": "auto"}} fontSize={32}>Создать аккаунт</Typography>
-                            <form style={{"width":"100%"}} onSubmit={handleRegister}>
+                            <form style={{"width":"100%"}} onSubmit={(e) => handleRegister(e, referrer)}>
                                 <FormError isError={states.isError} errorMessage={states.errorMessage} />
                                 <Stack gap={1} style={{"marginTop":"10px"}}>
                                     <InputLabel style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}}>Email</InputLabel>
