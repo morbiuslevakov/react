@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const apiUrl = "https://api.yusra.community/v1";
-// const apiUrl = "http://localhost:8081/v1";
+// const apiUrl = "https://api.yusra.community/v1";
+const apiUrl = "http://localhost:8081/v1";
 
 export const apiConfig = {
     withCredentials: true,
@@ -41,7 +41,7 @@ export const signout = async () => {
 };
 
 export const resendConfirmApi = async (email) => {
-    const url = `${apiUrl}/auth/send-confirmation?email=${email}`;
+    const url = `${apiUrl}/auth/send-confirmation?principal=${email}`;
     try {
         const response = await axios.get(url, apiConfig)
         return response.data;
@@ -49,6 +49,37 @@ export const resendConfirmApi = async (email) => {
         throw error.response.data
     }
 };
+
+export const confirmAccount = async (token) => {
+    const url = `${apiUrl}/auth/confirm-account/${token}`;
+    try {
+        const response = await axios.get(url, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error.response.data
+    }
+};
+
+export const forgetPassword = async (email) => {
+    const url = `${apiUrl}/auth/forget-password?email=${email}`;
+    try {
+        const response = await axios.get(url, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error.response.data
+    }
+};
+
+export const forgetPasswordPost = async (payload, uuid) => {
+    const url = `${apiUrl}/auth/forget-password/${uuid}`;
+    try {
+        const response = await axios.post(url, payload, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error.response.data
+    }
+};
+
 
 export const getWalletData = async () => {
     const url = `${apiUrl}/wallet/data`;

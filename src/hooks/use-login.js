@@ -42,6 +42,7 @@ export const useLogin = () => {
             setUserToStorage(result)
             window.location.reload()
         }).catch((error) => {
+            console.log(error)
             if (error.response.data === "User not found") {
                 setErrorMessage("Пользователь не найден");
             }

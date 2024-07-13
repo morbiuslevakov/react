@@ -12,8 +12,6 @@ import { useWallet } from "../../hooks/use-wallet";
 import { SnackbarProvider, useSnackbar } from "notistack";
 import { CardContent, DefaultCard } from "../Styled";
 import { BackArrowIcon } from "../wallet/icons/BackArrow";
-import axios from "axios";
-import { apiConfig } from "../../utils/api-utils";
 import { enableGoogleAuth, disableGoogleAuth, requestGoogleAuth } from "../../utils/api-utils";
 import { AuthIcon } from "../wallet/icons/AuthIcon";
 import { QRCodeScanning } from "../../components/dialogs/QRCodeScanning";
@@ -32,8 +30,31 @@ const StyledButton = styled(Button)(({theme}) => ({
     },
 }))
 
-export const ManageAuth = () => {
+const ButtonComponent = ({ setSecret, setImageData, setOpenQRCodeScan }) => {
     const { enqueueSnackbar } = useSnackbar();
+
+    const handleClickEnableTfauth = async () => {
+        requestGoogleAuth().then((response) => {
+            setSecret(response.secret);
+            setImageData(response.qrCodeURI);
+            setOpenQRCodeScan(true);
+        }).catch((error) => {
+            if (error.response.data === "First confirm your email") {
+                enqueueSnackbar("Необходимо подтвердить почту", {
+                    variant: "warning",
+                    autoHideDuration: 2000,
+                    anchorOrigin: { vertical: "bottom", horizontal: "left" }
+                });
+            }
+        })
+    };
+
+    return (
+        <StyledButton onClick={handleClickEnableTfauth}><Typography>Включить приложение Authenticator</Typography></StyledButton>
+    );
+}
+
+export const ManageAuth = () => {
     const [secret, setSecret] = useState("");
     const [imageData, setImageData] = useState("");
     const { user } = useWallet();
@@ -46,22 +67,6 @@ export const ManageAuth = () => {
     const [openAuthCheck, setOpenAuthCheck] = useState(false);
     const [openAuthDeleteWarning, setOpenAuthDeleteWarning] = useState(false);
     const [openAuthDeleteCheck, setOpenAuthDeleteCheck] = useState(false);
-
-    const handleClickEnableTfauth = async () => {
-        requestGoogleAuth().then((response) => {
-            setSecret(response.data.secret);
-            setImageData(response.data.qrCodeURI);
-        }).catch((error) => {
-            if (error.response.data === "First confirm your email") {
-                enqueueSnackbar("Необходимо подтвердить почту", {
-                    variant: "warning",
-                    autoHideDuration: 2000,
-                    anchorOrigin: { vertical: "top", horizontal: "right" }
-                });
-            }
-        })
-        setOpenQRCodeScan(true);
-    };
 
 
     const handleAuthCheck = () => {
@@ -147,7 +152,7 @@ export const ManageAuth = () => {
                                             <Typography fontSize={"1rem"} fontWeight={500} color={"#717171"}>
                                                 Чтобы не ждать текстовые сообщения, получайте проверочные коды через приложение-аутентификатор, например Google Authenticator. Приложение работает, даже если ваш телефон находится в автономном режиме.
                                             </Typography>
-                                            <StyledButton onClick={handleClickEnableTfauth}><Typography>Включить приложение Authenticator</Typography></StyledButton>
+                                            <ButtonComponent setSecret={setSecret} setImageData={setImageData} setOpenQRCodeScan={setOpenQRCodeScan} />
                                         </>
                                     }
                                 </Stack>

@@ -16,6 +16,7 @@ import { UserProvider } from "./context/user-context";
 import { Profile } from "./pages/profile/Profile";
 import { ManageAuth } from "./pages/manage-tfauth/ManageAuth";
 import { ManagePassword } from "./pages/manage-password/ManagePassword";
+import { ForgetPassword } from "./pages/forget-password/ForgetPassword";
 
 export const App = () => {
   return (
@@ -30,6 +31,7 @@ export const App = () => {
                           <Route path="manage-password" element={<ManagePassword />}></Route>
                           <Route path="login" element={<Login/>}></Route>
                           <Route path="confirm-account" element={<ConfirmAccount />}></Route>
+                          <Route path="forget-password" element={<ForgetPassword />}></Route>
                           <Route path="history" element={<PrivateRoute><History /></PrivateRoute>} ></Route>
                           <Route path="deposit" element={<PrivateRoute><Deposit /></PrivateRoute>} ></Route>
                           <Route path="withdraw" element={<PrivateRoute><Withdraw /></PrivateRoute>} ></Route>
