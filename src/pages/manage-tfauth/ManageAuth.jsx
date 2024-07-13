@@ -9,7 +9,7 @@ import {
 import { Link, Navigate } from "react-router-dom";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import { useWallet } from "../../hooks/use-wallet";
-import { SnackbarProvider } from "notistack";
+import { SnackbarProvider, useSnackbar } from "notistack";
 import { CardContent, DefaultCard } from "../Styled";
 import { BackArrowIcon } from "../wallet/icons/BackArrow";
 import axios from "axios";
@@ -35,6 +35,7 @@ const StyledButton = styled(Button)(({theme}) => ({
 const apiUrl = "https://api.yusra.community/v1";
 
 export const ManageAuth = () => {
+    const { enqueueSnackbar } = useSnackbar();
     const [secret, setSecret] = useState("");
     const [imageData, setImageData] = useState("");
     const { user } = useWallet();
@@ -49,14 +50,19 @@ export const ManageAuth = () => {
     const [openAuthDeleteCheck, setOpenAuthDeleteCheck] = useState(false);
 
     const handleClickEnableTfauth = async () => {
-        const url = `${apiUrl}/user/enable-tfauth`;
-        try {
-            const response = await axios.get(url, apiConfig)
-            setSecret(response.data.secret);
-            setImageData(response.data.qrCodeURI);
-        } catch (error) {
-            throw error;
+    const url = `${apiUrl}/user/enable-tfauth`;
+    await axios.get(url, apiConfig).then((response) => {
+        setSecret(response.data.secret);
+        setImageData(response.data.qrCodeURI);
+    }).catch((error) => {
+        if (error.response.data === "First confirm your email") {
+            enqueueSnackbar("Необходимо подтвердить почту", {
+                variant: "warning",
+                autoHideDuration: 2000,
+                anchorOrigin: { vertical: "top", horizontal: "right" }
+            });
         }
+    })
         setOpenQRCodeScan(true);
     };
 
