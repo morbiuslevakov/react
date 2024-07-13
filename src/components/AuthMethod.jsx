@@ -17,8 +17,8 @@ export const AuthMethod = ({ title, text, icon, link }) => {
             </Box>
             <Box style={{display: "flex", marginLeft: "20px"}} alignItems="center">
                 <Typography>
-                    <span style={{fontSize: isMobile? "0.9rem" : "1.1rem", color: "#717171", fontWeight: 600}}>{title}</span><br/>
-                    <span style={{fontSize: isMobile? "0.8rem" : "1rem", color: "#004444"}}>{text}</span>
+                    <span style={{fontSize: isMobile? "0.8rem" : "1.1rem", color: "#717171", fontWeight: 600}}>{title}</span><br/>
+                    <span style={{fontSize: isMobile? "0.7rem" : "1rem", color: "#004444"}}>{text}</span>
                 </Typography>
             </Box>
             <Button onClick={handleClick} style={{marginLeft: "auto"}} variant="contained" color="primary">
