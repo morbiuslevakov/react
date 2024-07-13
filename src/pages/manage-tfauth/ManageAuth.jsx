@@ -14,7 +14,7 @@ import { CardContent, DefaultCard } from "../Styled";
 import { BackArrowIcon } from "../wallet/icons/BackArrow";
 import axios from "axios";
 import { apiConfig } from "../../utils/api-utils";
-import { enableGoogleAuth, disableGoogleAuth } from "../../utils/api-utils";
+import { enableGoogleAuth, disableGoogleAuth, requestGoogleAuth } from "../../utils/api-utils";
 import { AuthIcon } from "../wallet/icons/AuthIcon";
 import { QRCodeScanning } from "../../components/dialogs/QRCodeScanning";
 import { AuthCheck } from "../../components/dialogs/AuthCheck";
@@ -32,8 +32,6 @@ const StyledButton = styled(Button)(({theme}) => ({
     },
 }))
 
-const apiUrl = "https://api.yusra.community/v1";
-
 export const ManageAuth = () => {
     const { enqueueSnackbar } = useSnackbar();
     const [secret, setSecret] = useState("");
@@ -50,19 +48,18 @@ export const ManageAuth = () => {
     const [openAuthDeleteCheck, setOpenAuthDeleteCheck] = useState(false);
 
     const handleClickEnableTfauth = async () => {
-    const url = `${apiUrl}/user/enable-tfauth`;
-    await axios.get(url, apiConfig).then((response) => {
-        setSecret(response.data.secret);
-        setImageData(response.data.qrCodeURI);
-    }).catch((error) => {
-        if (error.response.data === "First confirm your email") {
-            enqueueSnackbar("Необходимо подтвердить почту", {
-                variant: "warning",
-                autoHideDuration: 2000,
-                anchorOrigin: { vertical: "top", horizontal: "right" }
-            });
-        }
-    })
+        requestGoogleAuth().then((response) => {
+            setSecret(response.data.secret);
+            setImageData(response.data.qrCodeURI);
+        }).catch((error) => {
+            if (error.response.data === "First confirm your email") {
+                enqueueSnackbar("Необходимо подтвердить почту", {
+                    variant: "warning",
+                    autoHideDuration: 2000,
+                    anchorOrigin: { vertical: "top", horizontal: "right" }
+                });
+            }
+        })
         setOpenQRCodeScan(true);
     };
 
