@@ -32,7 +32,7 @@ const StyledButton = styled(Button)(({theme}) => ({
     },
 }))
 
-const apiUrl = "http://localhost:8081/v1";
+const apiUrl = "https://api.yusra.community/v1";
 
 export const ManageAuth = () => {
     const [secret, setSecret] = useState("");
