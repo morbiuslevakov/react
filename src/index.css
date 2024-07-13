@@ -1,9 +1,9 @@
 body {
   margin: 0;
+  height: 100vh;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*background-image: url("./static/yusra.svg");*/
   background-color: #F2F3F7;
   color: #717171!important;
   background-size: cover;
@@ -240,4 +240,19 @@ input[type="number"] {
 }
 .bot_card.svelte-dpmec9.svelte-dpmec9 {
     padding: 60px 280px 86px 60px;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    border-radius: 15px!important;
+}
+.css-lxw8bz-MuiFormLabel-root-MuiInputLabel-root {
+    color: #717171!important;
+}
+.css-1wnxr9m-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #717171!important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:focus {
+    outline: 1px!important;
+}
+.css-1wnxr9m-MuiFormLabel-root-MuiInputLabel-root {
+    color: #717171!important;
 }

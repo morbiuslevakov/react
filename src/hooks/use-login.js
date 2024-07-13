@@ -36,7 +36,7 @@ export const useLogin = () => {
             setIsError(false);
         }
 
-        const formData = faRequired ? JSON.stringify({ email: email, password: password, totpCode: fa }) : JSON.stringify({ email: email, password: password })
+        const formData = JSON.stringify({ email: email, password: password, totpCode: fa })
 
         login(formData).then(result => {
             setUserToStorage(result)
@@ -47,6 +47,13 @@ export const useLogin = () => {
             }
             if (error.response.data === "Invalid password") {
                 setErrorMessage("Неверный пароль");
+            }
+            if (error.response.data === "Two factor authentication required") {
+                setFaRequired(true)
+                setErrorMessage("Введите 2FA код");
+            }
+            if (error.response.data === "Invalid two factor authentication code") {
+                setErrorMessage("Неверный 2FA код");
             }
             if (error.response.data === "Account not enabled") {
                 navigate(`/confirm-account?email=${email}`)

@@ -5,7 +5,7 @@ import { CustomButton } from '../CustomButton';
 import { changePassword } from "../../utils/api-utils";
 import { FormError } from "../auth-pages/FormError";
 import { useSnackbar } from "notistack";
-import {CopyIcon} from "../../pages/wallet/icons/CopyIcon";
+import { CopyIcon } from "../../pages/wallet/icons/CopyIcon";
 
 export const Profile = ({ user }) => {
     const { enqueueSnackbar } = useSnackbar();

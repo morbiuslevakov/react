@@ -22,7 +22,7 @@ export const CardContent = styled(Stack)({
 })
 
 export const CustomButtonStyled = styled(Button)({
-    textTransform: "capitalize",
+    textTransform: "math-auto",
     marginTop: "20px",
     width: '100%',
     backgroundColor: "#004444",

@@ -10,16 +10,20 @@ export const HeaderMenu = ({ isLogged }) => {
                     Главная
                 </Typography>
             </HeaderMenuItem>
-            {isLogged && <HeaderMenuItem to={'/wallet'}>
-                <Typography>
-                    Кошелек
-                </Typography>
-            </HeaderMenuItem>}
-            <HeaderMenuItem to={'/explorer'}>
-                <Typography>
-                    Обзор
-                </Typography>
-            </HeaderMenuItem>
+            {isLogged &&
+                <>
+                    <HeaderMenuItem to={'/wallet'}>
+                        <Typography>
+                            Кошелек
+                        </Typography>
+                    </HeaderMenuItem>
+                    <HeaderMenuItem to={'/profile'}>
+                        <Typography>
+                            Профиль
+                        </Typography>
+                    </HeaderMenuItem>
+                </>
+            }
         </Stack>
     )
 }

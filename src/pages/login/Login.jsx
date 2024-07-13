@@ -1,6 +1,6 @@
-import React, {useContext, useEffect, useRef, useState} from "react";
+import React, { useContext } from "react";
 import { Navigate, Link } from "react-router-dom";
-import { Stack, Typography, InputLabel, Box } from "@mui/material";
+import { Stack, Typography, InputLabel } from "@mui/material";
 import { CustomInput, PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import { RedirectLink } from "../../components/auth-pages/RedirectLink";
 import { FormError } from "../../components/auth-pages/FormError";
@@ -10,7 +10,6 @@ import UserContext from "../../context/user-context";
 import { ConfirmEmail } from "../../components/auth-pages/ConfirmEmail";
 import { DefaultCard, CardContent } from '../Styled';
 import { CustomButton } from '../../components/CustomButton';
-import {TelegramCard}  from '../../components/telegram-card/TelegramCard';
 import { Infographic } from '../../components/infogrphic/Infographic';
 
 export const Login = () => {
@@ -41,8 +40,8 @@ export const Login = () => {
                                         placeholder="Введите пароль" endAdornment={<PasswordAddornment callback={togglePasswordVisible} isVisible={states.showPassword} />} />
                                 </Stack>
                                 {states.faRequired && <Stack gap={1} style={{"marginTop":"10px"}}>
-                                    <InputLabel style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}}>2fa Код</InputLabel>
-                                    <CustomInput size="lg" type="text" value={states.fa} onChange={changeHandlers.fa} placeholder="Введите 2fa код" />
+                                    <InputLabel style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}}>2FA Код</InputLabel>
+                                    <CustomInput size="lg" type="text" value={states.fa} onChange={changeHandlers.fa} placeholder="Введите 2FA код" />
                                 </Stack>}
                                 <CustomButton text="Войти" />
                             </form>

@@ -47,17 +47,19 @@ export const MobileMenu = ({ isLogged }) => {
                                 </ListItemButton>
                             </ListItem>
                             {isLogged &&
-                                <ListItem disablePadding>
-                                    <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/wallet") }}>
-                                        <ListItemText className="menu-links" primary={"Кошелек"} />
-                                    </ListItemButton>
-                                </ListItem>
+                                <>
+                                    <ListItem disablePadding>
+                                        <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/wallet") }}>
+                                            <ListItemText className="menu-links" primary={"Кошелек"} />
+                                        </ListItemButton>
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/profile") }}>
+                                            <ListItemText className="menu-links" primary={"Профиль"} />
+                                        </ListItemButton>
+                                    </ListItem>
+                                </>
                             }
-                            <ListItem disablePadding>
-                                <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/explorer") }}>
-                                    <ListItemText className="menu-links" primary={"Обзор"} />
-                                </ListItemButton>
-                            </ListItem>
                             <ListItem disablePadding>
                                 <ListItemButton sx={{ paddingY: 0 }} onClick={() => { navigate("/faq") }}>
                                     <ListItemText className="menu-links" primary={"FAQ"} />

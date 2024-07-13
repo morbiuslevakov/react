@@ -13,6 +13,9 @@ import { SharedLayout } from "./pages/shared-layout/SharedLayout";
 import { PrivateRoute } from "./pages/private/PrivateRoute";
 import { theme } from "./constants/theme";
 import { UserProvider } from "./context/user-context";
+import { Profile } from "./pages/profile/Profile";
+import { ManageAuth } from "./pages/manage-tfauth/ManageAuth";
+import { ManagePassword } from "./pages/manage-password/ManagePassword";
 
 export const App = () => {
   return (
@@ -22,6 +25,9 @@ export const App = () => {
                   <Routes>
                       <Route path="/" element={<SharedLayout/>}>
                           <Route path="register" element={<Register/>}></Route>
+                          <Route path="profile" element={<Profile/>}></Route>
+                          <Route path="manage-authenticator" element={<ManageAuth />}></Route>
+                          <Route path="manage-password" element={<ManagePassword />}></Route>
                           <Route path="login" element={<Login/>}></Route>
                           <Route path="confirm-account" element={<ConfirmAccount />}></Route>
                           <Route path="history" element={<PrivateRoute><History /></PrivateRoute>} ></Route>

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const apiUrl = "https://api.yusra.community/v1";
+// const apiUrl = "https://api.yusra.community/v1";
+const apiUrl = "http://localhost:8081/v1";
 
 export const apiConfig = {
     withCredentials: true,
@@ -86,5 +87,35 @@ export const changePassword = async (payload) => {
         return response.data;
     } catch (error) {
         throw error.response.data
+    }
+};
+
+export const requestGoogleAuth = async () => {
+    const url = `${apiUrl}/user/enable-tfauth`;
+    try {
+        const response = await axios.get(url, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const enableGoogleAuth = async (payload) => {
+    const url = `${apiUrl}/user/enable-tfauth`;
+    try {
+        const response = await axios.post(url, payload, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const disableGoogleAuth = async (payload) => {
+    const url = `${apiUrl}/user/disable-tfauth`;
+    try {
+        const response = await axios.post(url, payload, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error;
     }
 };
