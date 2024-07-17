@@ -32,9 +32,14 @@ export const Main = () => {
             <PageContent style={{"width":"auto"}}>
                 <Infographic titleFloat="right" textFloat="right" title="about"
                              text="Данный сайт предназначен для обмена (свапа) токенов YUSRA, чтобы обменять токены — вам необходимо зарегистрироваться"/>
-                <Box style={{width: "100%", display: "flex", flexDirection: "row"}}>
+                <Box style={{width: "100%", display: "flex", flexDirection: "row", padding: "20px"}}>
                     {
-                        data.map((el) => <Box><Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>{el.dataName === "SWAPPED" ? "Обменянно" : "Выведено"}<br/>el.dataValue</Typography></Box>)
+                        data.map((el) =>
+                            <Box>
+                                <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
+                                    {el.dataName === "SWAPPED" ? "Обменянно" : "Выведено"}<br/>{el.dataValue}
+                                </Typography>
+                            </Box>)
                     }
                 </Box>
                 <Box style={{"padding":"20px"}}>
