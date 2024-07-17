@@ -17,7 +17,7 @@ export const useMain = () => {
 
     useEffect(() => {
         fetchData().then();
-    }, [fetchData]);
+    });
 
 
     return { data };
