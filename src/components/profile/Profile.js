@@ -6,8 +6,10 @@ import { changePassword } from "../../utils/api-utils";
 import { FormError } from "../auth-pages/FormError";
 import { useSnackbar } from "notistack";
 import { CopyIcon } from "../../pages/wallet/icons/CopyIcon";
+import {useMediaQueryHook} from "../../hooks/use-media-query";
 
 export const Profile = ({ user }) => {
+    const isMobile = useMediaQueryHook('sm')
     const { enqueueSnackbar } = useSnackbar();
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
