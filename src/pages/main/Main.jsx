@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import { Stack, Typography, Box } from '@mui/material';
 import { Infographic } from "../../components/infogrphic/Infographic";
-import {useMain} from "../../hooks/use-main";
+import { useMain } from "../../hooks/use-main";
+import axios from "axios";
+import { apiConfig } from "../../utils/api-utils";
 
 export const Main = () => {
-    const { data } = useMain();
+    const [data, setData] = useState([]);
+
+    useEffect(async () => {
+        const url = `https://api.yusra.community/v1/public/info`;
+        try {
+            const response = await axios.get(url, apiConfig)
+            setData(response.data);
+        } catch (error) {
+            throw error;
+        }
+    }, []);
 
     return (
         <Wrapper style={{"top":0, "left":0}}>
