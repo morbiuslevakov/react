@@ -3,7 +3,7 @@ import UserContext from "../context/user-context";
 import { useApiRequest } from './use-api-request';
 import { getWalletData } from "../utils/api-utils";
 
-export const useWallet = () => {
+export const useInfo = () => {
     const { user } = useContext(UserContext);
     const [data, setData] = useState({});
     const apiRequest = useApiRequest();

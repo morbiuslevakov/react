@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Stack, Typography, TextField } from "@mui/material";
+import {Stack, Typography, TextField, Box} from "@mui/material";
 import { DefaultCard, CardContent } from "../../pages/Styled";
 import { CustomButton } from '../CustomButton';
 import { changePassword } from "../../utils/api-utils";
@@ -76,15 +76,28 @@ export const Profile = ({ user }) => {
                         <CopyIcon text={`https://swap.yusra.community/register?referrer=${user.id}`} />
                     </Stack>
                 </Stack>
+
                 <Stack style={{"width":"100%", "display":"flex", "alignItems":"center", "marginTop":"10px"}}>
                     <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>логин: {user.email}</Typography>
-                    <form onSubmit={handleSubmit}>
-                        <FormError isError={isError} errorMessage={errorMessage} />
-                        <TextField id="oldPassword" style={{"width":"100%", "marginTop":"10px"}} onChange={(event) => { setOldPassword(event.target.value) }} value={oldPassword} type="text" placeholder="Старый пароль"/>
-                        <TextField id="newPassword" style={{"width":"100%", "marginTop":"10px"}} error={!passwordValid} helperText={helperText} onChange={(event) => { handleNewPasswordChange(event) }} value={newPassword} type="text" placeholder="Новый пароль"/>
-                        <TextField id="newPasswordConfirm" style={{"width":"100%", "marginTop":"10px"}} error={!passwordsMatch} helperText={!passwordsMatch ? "Пароли не совпадают" : ""} onChange={(event) => { handleConfirmPasswordChange(event) }} value={confirmPassword} type="text" placeholder="Подтвердите новый пароль"/>
-                        <CustomButton type="submit" text="Изменить пароль"/>
-                    </form>
+                    <Box style={{width: "100%", display: "flex", flexDirection: "row"}}>
+                        <Box>
+                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
+                                Приглашено<br/>
+                                {user.reffs}</Typography>
+                        </Box>
+                        <Box>
+                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
+                                Выведено<br/>
+                                {user.withdrawn}</Typography>
+                        </Box>
+                    </Box>
+                    {/*<form onSubmit={handleSubmit}>*/}
+                    {/*    <FormError isError={isError} errorMessage={errorMessage} />*/}
+                    {/*    <TextField id="oldPassword" style={{"width":"100%", "marginTop":"10px"}} onChange={(event) => { setOldPassword(event.target.value) }} value={oldPassword} type="text" placeholder="Старый пароль"/>*/}
+                    {/*    <TextField id="newPassword" style={{"width":"100%", "marginTop":"10px"}} error={!passwordValid} helperText={helperText} onChange={(event) => { handleNewPasswordChange(event) }} value={newPassword} type="text" placeholder="Новый пароль"/>*/}
+                    {/*    <TextField id="newPasswordConfirm" style={{"width":"100%", "marginTop":"10px"}} error={!passwordsMatch} helperText={!passwordsMatch ? "Пароли не совпадают" : ""} onChange={(event) => { handleConfirmPasswordChange(event) }} value={confirmPassword} type="text" placeholder="Подтвердите новый пароль"/>*/}
+                    {/*    <CustomButton type="submit" text="Изменить пароль"/>*/}
+                    {/*</form>*/}
                 </Stack>
             </CardContent>
         </DefaultCard>

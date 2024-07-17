@@ -150,3 +150,13 @@ export const disableGoogleAuth = async (payload) => {
         throw error;
     }
 };
+
+export const getInfo = async () => {
+    const url = `${apiUrl}/public/info`;
+    try {
+        const response = await axios.get(url, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};

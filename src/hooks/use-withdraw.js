@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { sendTokens } from '../utils/api-utils';
-import { useWallet } from "./use-wallet";
+import { useInfo } from "./use-info";
 import { PublicKey } from "@solana/web3.js";
 // import { Address } from '@ton/core';
 
 export const useWithdraw = () => {
     const navigate = useNavigate();
-    const { data, user } = useWallet();
+    const { data, user } = useInfo();
     const [address, setAddress] = useState("");
     const [amount, setAmount] = useState("");
     const [memo, setMemo] = useState("");

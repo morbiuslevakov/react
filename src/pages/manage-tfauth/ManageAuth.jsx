@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { Link, Navigate } from "react-router-dom";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
-import { useWallet } from "../../hooks/use-wallet";
+import { useInfo } from "../../hooks/use-info";
 import { SnackbarProvider, useSnackbar } from "notistack";
 import { CardContent, DefaultCard } from "../Styled";
 import { BackArrowIcon } from "../wallet/icons/BackArrow";
@@ -57,7 +57,7 @@ const ButtonComponent = ({ setSecret, setImageData, setOpenQRCodeScan }) => {
 export const ManageAuth = () => {
     const [secret, setSecret] = useState("");
     const [imageData, setImageData] = useState("");
-    const { user } = useWallet();
+    const { user } = useInfo();
     const [totpCode, setTotpCode] = useState("");
     const [password, setPassword] = useState("");
     const [isError, setIsError] = useState(false);

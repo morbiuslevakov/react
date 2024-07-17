@@ -1,10 +1,11 @@
 import React from "react";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import { Stack, Typography, Box } from '@mui/material';
-import {Infographic} from "../../components/infogrphic/Infographic";
-import {TelegramCard} from "../../components/telegram-card/TelegramCard";
+import { Infographic } from "../../components/infogrphic/Infographic";
+import {useMain} from "../../hooks/use-main";
 
 export const Main = () => {
+    const { data } = useMain();
 
     return (
         <Wrapper style={{"top":0, "left":0}}>
@@ -14,14 +15,16 @@ export const Main = () => {
                         <h1 style={{"fontSize": "5rem", "textAlign":"left", "color": "white", "float":"left"}} className="main-title">yusra</h1>
                         <h3 style={{"fontSize": "3rem", "textAlign":"right", "color": "white", "float":"right"}} className="main-title">.community</h3>
                     </Box>
-                    {/*<Box className="main-block-subtitle" style={{"display":"block", "width":"100%", "max-width":"1100px"}}>*/}
-                    {/*    <Typography style={{"fontSize": "1.75rem", "fontWeight":300, "fontFamily":"Montserrat, sans-serif", "color": "white", "float":"right", "marginTop":"80px"}}>What is YusraCommunity</Typography>*/}
-                    {/*</Box>*/}
                 </div>
             </Stack>
             <PageContent style={{"width":"auto"}}>
                 <Infographic titleFloat="right" textFloat="right" title="about"
                              text="Данный сайт предназначен для обмена (свапа) токенов YUSRA, чтобы обменять токены — вам необходимо зарегистрироваться"/>
+                <Box style={{width: "100%", display: "flex", flexDirection: "row"}}>
+                    {
+                        data.map((el) => <Box><Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>{el.dataName === "SWAPPED" ? "Обменянно" : "Выведено"}<br/>el.dataValue</Typography></Box>)
+                    }
+                </Box>
                 <Box style={{"padding":"20px"}}>
                     <Box style={{"float": "right", "borderRight": "4px solid #004444", "padding": "24px 30px"}}>
                         <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>

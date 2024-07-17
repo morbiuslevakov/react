@@ -2,13 +2,13 @@ import React from "react";
 import { Stack } from "@mui/material";
 import { Navigate } from "react-router-dom";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
-import { useWallet } from "../../hooks/use-wallet";
+import { useInfo } from "../../hooks/use-info";
 import { SnackbarProvider } from "notistack";
 import { Security } from "../../components/security/Security";
 import { Profile as ProfileComponent } from "../../components/profile/Profile";
 
 export const Profile = () => {
-    const { user } = useWallet();
+    const { user } = useInfo();
 
     if (!user) {
         return <Navigate to={'/login'} />;

@@ -4,7 +4,7 @@ import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { Navigate, Link } from "react-router-dom";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
-import { useWallet } from "../../hooks/use-wallet";
+import { useInfo } from "../../hooks/use-info";
 import { DefaultCard, CardContent } from "../Styled";
 import { YusraGreyIcon } from "./icons/YusraGreyIcon";
 import { ArrowIcon } from "./icons/ArrowIcon";
@@ -13,7 +13,7 @@ import { Profile } from '../../components/profile/Profile';
 import { SnackbarProvider } from "notistack";
 
 export const Wallet = () => {
-    const { data, user, changeHandlers, states } = useWallet();
+    const { data, user, changeHandlers, states } = useInfo();
     const [open, setOpen] = React.useState(false);
 
     if (!user) {
