@@ -10,7 +10,7 @@ export const Main = () => {
     const [data, setData] = useState([]);
     const isMobile = useMediaQueryHook('sm')
 
-    useEffect(async () => {
+    useEffect(() => {
         const fetchData = async () => {
             const url = `https://api.yusra.community/v1/public/info`;
             try {
