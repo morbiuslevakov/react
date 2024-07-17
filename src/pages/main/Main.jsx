@@ -2,12 +2,13 @@ import React, {useEffect, useState} from "react";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import { Stack, Typography, Box } from '@mui/material';
 import { Infographic } from "../../components/infogrphic/Infographic";
-import { useMain } from "../../hooks/use-main";
 import axios from "axios";
 import { apiConfig } from "../../utils/api-utils";
+import {useMediaQueryHook} from "../../hooks/use-media-query";
 
 export const Main = () => {
     const [data, setData] = useState([]);
+    const isMobile = useMediaQueryHook('sm')
 
     useEffect(async () => {
         const url = `https://api.yusra.community/v1/public/info`;
@@ -36,7 +37,7 @@ export const Main = () => {
                     {
                         data.map((el) =>
                             <Box style={{display: "flex", alignItems: "center"}}>
-                                <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"2.5rem"}>
+                                <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
                                     {el.dataName === "SWAPPED" ? "ОБМЕНЯНО" : "ВЫВЕДЕНО"}<br/>{el.dataValue.toFixed(0)}
                                 </Typography>
                             </Box>)
