@@ -2,10 +2,8 @@ import React from "react";
 import {Stack, Typography, Box} from "@mui/material";
 import { DefaultCard, CardContent } from "../../pages/Styled";
 import { CopyIcon } from "../../pages/wallet/icons/CopyIcon";
-import { useMediaQueryHook } from "../../hooks/use-media-query";
 
 export const Profile = ({ user }) => {
-    const isMobile = useMediaQueryHook('sm');
 
     return (
         <DefaultCard className={"glass svelte-10w51t0 wallet-card"}>
@@ -25,12 +23,12 @@ export const Profile = ({ user }) => {
                     <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>логин: {user.email}</Typography>
                     <Box style={{display: "flex", flexDirection: "row", padding: "20px", alignItems: "center", gap: "25px"}}>
                         <Box style={{display: "flex", alignItems: "center"}}>
-                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
+                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={"1.5rem"}>
                                 Приглашено<br/>[ {user.reffs} ]
                             </Typography>
                         </Box>
                         <Box style={{display: "flex", alignItems: "center"}}>
-                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
+                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={"1.5rem"}>
                                 Выведено<br/>[ {user.withdrawn} ]
                             </Typography>
                         </Box>
