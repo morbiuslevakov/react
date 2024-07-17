@@ -79,16 +79,16 @@ export const Profile = ({ user }) => {
 
                 <Stack style={{"width":"100%", "display":"flex", "alignItems":"center", "marginTop":"10px"}}>
                     <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif"}} fontSize={"1.5rem"}>логин: {user.email}</Typography>
-                    <Box style={{width: "100%", display: "flex", flexDirection: "row"}}>
-                        <Box>
-                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
-                                Приглашено<br/>
-                                {user.reffs}</Typography>
+                    <Box style={{display: "flex", flexDirection: "row", padding: "20px", alignItems: "center", gap: "25px"}}>
+                        <Box style={{display: "flex", alignItems: "center"}}>
+                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
+                                Приглашено<br/>[ {user.reffs} ]
+                            </Typography>
                         </Box>
-                        <Box>
-                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
-                                Выведено<br/>
-                                {user.withdrawn}</Typography>
+                        <Box style={{display: "flex", alignItems: "center"}}>
+                            <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
+                                Выведено<br/>[ {user.withdrawn} ]
+                            </Typography>
                         </Box>
                     </Box>
                     {/*<form onSubmit={handleSubmit}>*/}

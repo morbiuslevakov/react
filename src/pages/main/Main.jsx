@@ -37,8 +37,8 @@ export const Main = () => {
                     {
                         data.map((el) =>
                             <Box style={{display: "flex", alignItems: "center"}}>
-                                <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
-                                    {el.dataName === "SWAPPED" ? "ОБМЕНЯНО" : "ВЫВЕДЕНО"}<br/>{el.dataValue.toFixed(0)}
+                                <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
+                                    {el.dataName === "SWAPPED" ? "ОБМЕНЯНО" : "ВЫВЕДЕНО"}<br/>[ {el.dataValue.toFixed(0)} ]
                                 </Typography>
                             </Box>)
                     }
