@@ -3,6 +3,7 @@ import {Box, Typography} from '@mui/material';
 import { useSnackbar } from 'notistack';
 import {WavesIcon} from "../../pages/wallet/icons/WavesIcon";
 import {SolanaIcon} from "../../pages/wallet/icons/SolanaIcon";
+import {Click} from "../../pages/wallet/icons/Click";
 
 export const Card = ({ address, network, blocks, minSum, time, fee }) => {
     const { enqueueSnackbar } = useSnackbar();
@@ -37,8 +38,11 @@ export const Card = ({ address, network, blocks, minSum, time, fee }) => {
                 </Typography>
             </Box>
             <Box style={{"marginLeft":"auto", "display":"flex", "alignItems":"center"}}>
-                {network === "WAVES" ? <WavesIcon/> : <SolanaIcon/>}
+                <Click />
             </Box>
+            {/*<Box style={{"marginLeft":"auto", "display":"flex", "alignItems":"center"}}>*/}
+            {/*    {network === "WAVES" ? <WavesIcon/> : <SolanaIcon/>}*/}
+            {/*</Box>*/}
         </Box>
     );
 }

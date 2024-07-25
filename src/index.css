@@ -19,6 +19,10 @@ body {
     font-family: 'Yusra';
     src: url('./static/Yusra-Regular.woff2') format('woff2')
 }
+@font-face {
+    font-family: 'OffBit';
+    src: url('./static/OffBit-Bold.woff') format('woff')
+}
 .main-title {
     margin: 0;
     font-family: "Yusra", serif !important;
@@ -125,6 +129,7 @@ a {
     align-items: center!important;
 }
 .avatar {
+    margin: auto;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -255,4 +260,10 @@ input[type="number"] {
 }
 .css-1wnxr9m-MuiFormLabel-root-MuiInputLabel-root {
     color: #717171!important;
+}
+.metadata-card {
+    margin-right: 25px;
+}
+.metadata-card:last-child {
+    margin-right: 0;
 }

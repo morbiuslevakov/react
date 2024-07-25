@@ -60,6 +60,10 @@ export const Deposit = () => {
                             </CardContent>
                         </DefaultCard>
                     </Stack>
+                    <Infographic titleFloat="right" textFloat="left" title="Swap"
+                                 text="Уважаемые пользователи, просим обратить внимание на то, что при переводе токенов YUSRA на Waves адрес, токены будут сожжены безвозвратно а вместо них вы получите обновленный токен YUSRA в сети TON в соотношении 1 к 1"/>
+                    <Infographic titleFloat="left" textFloat="left" title="Freeze"
+                                 text="Из обменянных токенов в первый месяц к выводу будет доступен 1%, остальные токены будут заморожены. Токены будут размораживаться в 4 этапа с момента свапа, по 1/2/3/4% в месяц в первый, второй, третий и четвертый год соответсвенно"/>
                     <Typography style={{"color":"#000000", "fontFamily":"Montserrat, sans-serif", "display":"block", "marginRight":"auto"}} fontSize={"1.5rem"}>
                         Периоды разморозки токенов YSR
                     </Typography>
@@ -83,10 +87,6 @@ export const Deposit = () => {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    <Infographic titleFloat="right" textFloat="left" title="Swap"
-                                 text="Уважаемые пользователи, просим обратить внимание на то, что при переводе токенов YUSRA на Waves адрес, токены будут сожжены безвозвратно а вместо них вы получите обновленный токен YUSRA в сети TON в соотношении 1 к 1"/>
-                    <Infographic titleFloat="left" textFloat="left" title="Freeze"
-                                 text="Из обменянных токенов в первый месяц к выводу будет доступен 1%, остальные токены будут заморожены. Токены будут размораживаться в 4 этапа с момента свапа, по 1/2/3/4% в месяц в первый, второй, третий и четвертый год соответсвенно"/>
                 </PageContent>
             </SnackbarProvider>
         </Wrapper>

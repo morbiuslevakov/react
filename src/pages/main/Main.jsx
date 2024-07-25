@@ -1,14 +1,45 @@
 import React, {useEffect, useState} from "react";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
-import { Stack, Typography, Box } from '@mui/material';
+import {Stack, Typography, Box, Card, CardContent, Button} from '@mui/material';
 import { Infographic } from "../../components/infogrphic/Infographic";
 import axios from "axios";
 import { apiConfig } from "../../utils/api-utils";
 import {useMediaQueryHook} from "../../hooks/use-media-query";
+import {styled} from "@mui/material/styles";
+
+const StyledCard = styled(Card)(({theme}) => ({
+    minWidth: '230px',
+    display: 'flex',
+    margin: '25px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+    cursor: "pointer",
+    "&:hover": {
+        backgroundColor: "#dee6f3"
+    },
+}))
+
+const ScrollContainer = styled(Box)({
+    justifyContent: "space-around",
+    padding: "25px",
+    alignItems: "center",
+    overflowX: 'auto',
+    '&::-webkit-scrollbar': {
+        display: 'none',
+    },
+    scrollbarWidth: 'none',
+});
 
 export const Main = () => {
     const [data, setData] = useState([]);
     const isMobile = useMediaQueryHook('sm')
+
+    const metadata = {
+        SWAPPED: 'Обмененные токены',
+        WITHDRAWN: 'Выведенные токены',
+        HOLDERS: 'Держателей'
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,22 +64,28 @@ export const Main = () => {
                     </Box>
                 </div>
             </Stack>
+            <ScrollContainer className={"scroll-container"}>
+                {
+                    data.map((el) =>
+                        <StyledCard style={{cursor: 'pointer'}}>
+                            <CardContent style={{textAlign: "center"}}>
+                                <Typography fontSize={"1.25rem"} color="textSecondary" gutterBottom>
+                                    {metadata[el.dataName]}
+                                </Typography>
+                                <Typography color="textSecondary" fontFamily={"OffBit"} fontSize={"1.5rem"}>
+                                    {el.dataValue.toFixed(0)} {(el.dataName === 'SWAPPED' || el.dataName === 'WITHDRAWN') && "$YSR"}
+                                </Typography>
+                            </CardContent>
+                        </StyledCard>
+                    )
+                }
+            </ScrollContainer>
             <PageContent style={{"width":"auto"}}>
                 <Infographic titleFloat="right" textFloat="right" title="about"
                              text="Данный сайт предназначен для обмена (свапа) токенов YUSRA, чтобы обменять токены — вам необходимо зарегистрироваться"/>
-                <Box style={{display: "flex", flexDirection: "row", padding: "20px", alignItems: "center", gap: "25px"}}>
-                    {
-                        data.map((el) =>
-                            <Box style={{display: "flex", alignItems: "center"}}>
-                                <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block", textAlign: "center"}} fontSize={isMobile ? "1.5rem" : "2.5rem"}>
-                                    {el.dataName === "SWAPPED" ? "ОБМЕНЯНО" : "ВЫВЕДЕНО"}<br/>[ {el.dataValue.toFixed(0)} ]
-                                </Typography>
-                            </Box>)
-                    }
-                </Box>
                 <Box style={{"padding":"20px"}}>
                     <Box style={{"float": "right", "borderRight": "4px solid #004444", "padding": "24px 30px"}}>
-                        <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
+                        <Typography fontWeight={600} style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
                             YusraCommunity — это высококвалифицированная, анонимная и независимая команда разработчиков и крипто-энтузиастов. Команда не предоставляет финансовые консультации и не связана с другими криптокомпаниями. Мы открыты для новых идеи и работаем исключительно в интересах криптосообщества.
                         </Typography>
                     </Box>

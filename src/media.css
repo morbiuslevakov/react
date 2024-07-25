@@ -92,6 +92,10 @@
         width: 20px;
         height: 20px;
     }
+    .click-here {
+        width: 60px!important;
+        height: 60px!important;
+    }
 }
 
 /* Стили для мобильных устройств (ширина экрана до 767px) */
@@ -122,6 +126,10 @@
     }
     .bot_card.svelte-dpmec9.svelte-dpmec9 {
         padding: 0 50px 0 25px;
+    }
+    .click-here {
+        width: 70px!important;
+        height: 70px!important;
     }
 }
 
@@ -162,6 +170,18 @@
     .header__logo.svelte-d56avp {
         top: 240px;
         width: 370px;
+    }
+}
+
+@media only screen and (max-width: 956px) {
+    .scroll-container {
+        display: block
+    }
+}
+
+@media only screen and (min-width: 956px) {
+    .scroll-container {
+        display: flex
     }
 }
 

@@ -18,7 +18,7 @@ export const Infographic = ({title, text, titleFloat, textFloat}) => {
             {/*    </Typography>*/}
             {/*</Box>*/}
             <Box style={style}>
-                <Typography style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
+                <Typography fontWeight={600} style={{"color":"#717171", "fontFamily":"Montserrat, sans-serif", "display":"block"}} fontSize={"1rem"}>
                     {text}
                 </Typography>
             </Box>

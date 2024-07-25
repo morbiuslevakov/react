@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Stack, Typography } from "@mui/material";
+import React, {useCallback, useContext, useEffect, useState} from "react";
+import {Box, Paper, Stack, styled, Typography} from "@mui/material";
 import { Navigate, Link } from "react-router-dom";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import UserContext from "../../context/user-context";
@@ -8,10 +8,50 @@ import { BackArrowIcon } from '../wallet/icons/BackArrow';
 import { SnackbarProvider } from "notistack";
 import { Transaction } from '../../components/transaction/Transaction';
 import { useHistory } from "../../hooks/use-history";
+import {useApiRequest} from "../../hooks/use-api-request";
+import {getTransactions} from "../../utils/api-utils";
+
+const ScrollContainer = styled(Box)({
+    display: 'flex',
+    overflowX: 'auto',
+    '&::-webkit-scrollbar': {
+        display: 'none',
+    },
+    scrollbarWidth: 'none',
+});
+
+const RoundedItem = styled(Paper)(({ theme, selected }) => ({
+    borderRadius: '35px',
+    padding: theme.spacing(1.5),
+    margin: theme.spacing(1),
+    minWidth: '150px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+    cursor: 'pointer',
+    color: selected ? "#ffffff" : "#717171",
+    backgroundColor: selected ? "#004444" : "#ffffff"
+}));
 
 export const History = () => {
-    const { transactions } = useHistory();
+    const [type, setType] = useState('SWAP');
+    const [transactions, setTransactions] = useState([]);
     const { user } = useContext(UserContext);
+    const apiRequest = useApiRequest();
+
+    const fetchData = useCallback(async (fetchType) => {
+        try {
+            const resData = await apiRequest(getTransactions, type);
+            setTransactions(resData)
+        } catch (error) {
+            console.log(error)
+        }
+    }, [apiRequest, type])
+
+    useEffect(() => {
+        fetchData(type).then();
+    }, [fetchData, type]);
 
     if (!user) {
         return <Navigate to={'/login'} />;
@@ -29,8 +69,25 @@ export const History = () => {
                                         <BackArrowIcon/>
                                     </Link>
                                 </Stack>
+                                <ScrollContainer>
+                                    <RoundedItem selected={type === "SWAP"} onClick={() => {
+                                        setType('SWAP');
+                                    }}>
+                                        <Typography color={"inherit"}>Входящие</Typography>
+                                    </RoundedItem>
+                                    <RoundedItem selected={type === "EXTERNAL_WITHDRAW"} onClick={() => {
+                                        setType('EXTERNAL_WITHDRAW');
+                                    }}>
+                                        <Typography color={"inherit"}>Исходящие</Typography>
+                                    </RoundedItem>
+                                    <RoundedItem selected={type === "REFERRAL_REWARD"} onClick={() => {
+                                        setType('REFERRAL_REWARD');
+                                    }}>
+                                        <Typography color={"inherit"}>Реферальный бонус</Typography>
+                                    </RoundedItem>
+                                </ScrollContainer>
                                 <Stack style={{"color": "#717171!important"}}>
-                                    {transactions.length !== 0 && transactions.reverse().map((transaction) => (
+                                    {transactions.length !== 0 && transactions.map((transaction) => (
                                             <>
                                                 <Transaction type={transaction.type} date={transaction.date} amount={transaction.amount} fee={transaction.fee}/>
                                                 <hr/>

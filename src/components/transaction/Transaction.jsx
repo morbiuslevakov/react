@@ -5,9 +5,9 @@ import {Box, Typography} from "@mui/material";
 export const Transaction = ({ type, date, amount, fee }) => {
     const time = new Date(date + 10800000);
     const txTypes = {
-        SWAP: "ОБМЕН",
-        EXTERNAL_WITHDRAW: "ВЫВОД",
-        REFERRAL_REWARD: "ВОЗНАГРАЖДЕНИЕ"
+        SWAP: "Обмен",
+        EXTERNAL_WITHDRAW: "Вывод",
+        REFERRAL_REWARD: "Вознаграждение"
     };
 
     return (

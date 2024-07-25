@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const apiUrl = "https://api.yusra.community/v1";
-// const apiUrl = "http://localhost:8081/v1";
+// const apiUrl = "https://api.yusra.community/v1";
+const apiUrl = "http://localhost:8081/v1";
 
 export const apiConfig = {
     withCredentials: true,
@@ -91,8 +91,8 @@ export const getWalletData = async () => {
     }
 };
 
-export const getTransactions = async () => {
-    const url = `${apiUrl}/wallet/transactions`;
+export const getTransactions = async (type) => {
+    const url = `${apiUrl}/wallet/transactions?type=${type}`;
     try {
         const response = await axios.get(url, apiConfig)
         return response.data;
