@@ -39,7 +39,7 @@ export const Main = () => {
         SWAPPED: 'Обмененные токены',
         WITHDRAWN: 'Выведенные токены',
         HOLDERS: 'Держателей',
-        REFERRAL_REWARD: 'Реферальный бонус'
+        REFERRAL_REWARD: 'Реферальных бонусов начислено'
     }
 
     useEffect(() => {
