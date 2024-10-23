@@ -38,7 +38,8 @@ export const Main = () => {
     const metadata = {
         SWAPPED: 'Обмененные токены',
         WITHDRAWN: 'Выведенные токены',
-        HOLDERS: 'Держателей'
+        HOLDERS: 'Держателей',
+        REFERRAL_REWARD: 'Реферальных бонусов начислено'
     }
 
     useEffect(() => {
