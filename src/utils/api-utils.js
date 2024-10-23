@@ -160,3 +160,13 @@ export const getInfo = async () => {
         throw error;
     }
 };
+
+export const getUsers = async (page, size) => {
+    const url = `${apiUrl}/admin/getUsers`;
+    try {
+        const response = await axios.get(url, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};

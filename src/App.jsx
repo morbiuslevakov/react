@@ -17,6 +17,7 @@ import { Profile } from "./pages/profile/Profile";
 import { ManageAuth } from "./pages/manage-tfauth/ManageAuth";
 import { ManagePassword } from "./pages/manage-password/ManagePassword";
 import { ForgetPassword } from "./pages/forget-password/ForgetPassword";
+import {Admin} from "./pages/admin/Admin";
 
 export const App = () => {
   return (
@@ -36,6 +37,7 @@ export const App = () => {
                           <Route path="deposit" element={<PrivateRoute><Deposit /></PrivateRoute>} ></Route>
                           <Route path="withdraw" element={<PrivateRoute><Withdraw /></PrivateRoute>} ></Route>
                           <Route path="wallet" element={<PrivateRoute><Wallet /></PrivateRoute>} ></Route>
+                          <Route path="admin" element={<Admin />}></Route>
                           <Route path="/" element={<Main />} ></Route>
                           <Route path="*" element={<Main />} ></Route>
                       </Route>
