@@ -162,7 +162,7 @@ export const getInfo = async () => {
 };
 
 export const getUsers = async (page, size) => {
-    const url = `${apiUrl}/admin/getUsers`;
+    const url = `${apiUrl}/admin/getUsers?page=${page}&size=${size}`;
     try {
         const response = await axios.get(url, apiConfig)
         return response.data;

@@ -10,7 +10,7 @@ import { useAdmin } from "../../hooks/use-admin";
 export const Admin = () => {
     const { user } = useContext(UserContext);
     const [page, setPage] = useState(1);
-    const { data } = useAdmin();
+    const { data } = useAdmin(page, 10);
 
     const handleChange = (event, value) => {
         setPage(value);
