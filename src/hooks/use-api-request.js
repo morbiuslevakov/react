@@ -15,6 +15,7 @@ export const useApiRequest = () => {
                 navigate("/login");
                 window.location.reload()
             } else {
+                console.log(error)
                 throw error.response.data;
             }
         }
