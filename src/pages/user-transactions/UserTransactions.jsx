@@ -70,8 +70,8 @@ export const UserTransactions = () => {
                                     </Link>
                                 </Stack>
                                 <Stack style={{"marginBottom": "30px", "display":"block"}}>
-                                    <Typography fontSize={"1.5rem"} style={{"display": "flex", "float": "left"}}>
-                                        {email}
+                                    <Typography fontSize={"1.5rem"} style={{"display": "flex", "float": "left", "color":"#717171"}}>
+                                        Email: {email}
                                     </Typography>
                                 </Stack>
                                 <ScrollContainer>

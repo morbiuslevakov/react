@@ -9,31 +9,31 @@ import { useAdmin } from "../../hooks/use-admin";
 
 export const Admin = () => {
     const { user } = useContext(UserContext);
-    // const { data, page, setPage } = useAdmin();
+    const { data, page, setPage } = useAdmin();
 
     const handleChange = (event, value) => {
         setPage(value);
     }
 
-    const page = 10;
-    const setPage = null;
-    const data = {
-        pages: 300,
-        users: [
-            {
-                email: "deaslide@gmail.com",
-                free: "100",
-                withdrawn: "1000",
-                total: "30000"
-            },
-            {
-                email: "deaslide@gmail.com",
-                free: "100",
-                withdrawn: "1000",
-                total: "30000"
-            }
-        ]
-    }
+    // const page = 10;
+    // const setPage = null;
+    // const data = {
+    //     pages: 300,
+    //     users: [
+    //         {
+    //             email: "deaslide@gmail.com",
+    //             free: "100",
+    //             withdrawn: "1000",
+    //             total: "30000"
+    //         },
+    //         {
+    //             email: "deaslide@gmail.com",
+    //             free: "100",
+    //             withdrawn: "1000",
+    //             total: "30000"
+    //         }
+    //     ]
+    // }
 
 
     if (!user) {
