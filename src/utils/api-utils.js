@@ -170,3 +170,13 @@ export const getUsers = async (page, size) => {
         throw error;
     }
 };
+
+export const getUserTransactions = async (email, type) => {
+    const url = `${apiUrl}/admin/getUser/${email}?type=${type}`;
+    try {
+        const response = await axios.get(url, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};

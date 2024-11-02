@@ -17,7 +17,8 @@ import { Profile } from "./pages/profile/Profile";
 import { ManageAuth } from "./pages/manage-tfauth/ManageAuth";
 import { ManagePassword } from "./pages/manage-password/ManagePassword";
 import { ForgetPassword } from "./pages/forget-password/ForgetPassword";
-import {Admin} from "./pages/admin/Admin";
+import { Admin } from "./pages/admin/Admin";
+import { UserTransactions } from "./pages/user-transactions/UserTransactions";
 
 export const App = () => {
   return (
@@ -38,6 +39,7 @@ export const App = () => {
                           <Route path="withdraw" element={<PrivateRoute><Withdraw /></PrivateRoute>} ></Route>
                           <Route path="wallet" element={<PrivateRoute><Wallet /></PrivateRoute>} ></Route>
                           <Route path="admin" element={<Admin />}></Route>
+                          <Route path="admin/:email" element={<UserTransactions />} />
                           <Route path="/" element={<Main />} ></Route>
                           <Route path="*" element={<Main />} ></Route>
                       </Route>

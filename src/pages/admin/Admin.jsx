@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { Pagination, Stack, Typography } from "@mui/material";
-import { Navigate } from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
 import UserContext from "../../context/user-context";
 import { DefaultCard, CardContent } from '../Styled';
@@ -9,10 +9,30 @@ import { useAdmin } from "../../hooks/use-admin";
 
 export const Admin = () => {
     const { user } = useContext(UserContext);
-    const { data, page, setPage } = useAdmin();
+    // const { data, page, setPage } = useAdmin();
 
     const handleChange = (event, value) => {
         setPage(value);
+    }
+
+    const page = 10;
+    const setPage = null;
+    const data = {
+        pages: 300,
+        users: [
+            {
+                email: "deaslide@gmail.com",
+                free: "100",
+                withdrawn: "1000",
+                total: "30000"
+            },
+            {
+                email: "deaslide@gmail.com",
+                free: "100",
+                withdrawn: "1000",
+                total: "30000"
+            }
+        ]
     }
 
 
@@ -33,7 +53,7 @@ export const Admin = () => {
                             <CardContent style={{"display": "block!important", "alignItems": "left"}}>
                                 {
                                     data.users && data.users.map((el) => (
-                                        <>
+                                        <Link to={`/admin/${el.email}`}>
                                             <Typography className="subtitle" style={{
                                                 "color": "#717171",
                                                 "fontFamily": "Montserrat, sans-serif",
@@ -59,7 +79,7 @@ export const Admin = () => {
                                                 "alignItems": "center"
                                             }} fontSize={"1"}>Доступно: {el.free}</Typography>
                                             <hr className={"line"}/>
-                                        </>
+                                        </Link>
                                     ))
                                 }
                                 <Pagination count={data.pages} page={page} onChange={handleChange} style={{margin: "auto"}} />
