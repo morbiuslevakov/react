@@ -35,7 +35,7 @@ export const Transactions = () => {
     }
 
     return (
-        <Wrapper style={{"backgroundImage":"url(https://s3.timeweb.com/24581035-081cc679-ce58-4307-808e-bb42d83baee6/cat.svg)", "backgroundRepeat":"no-repeat", "backgroundAttachment":"fixed", "width":"100%", "height":"100%", "top":0, "left":0}}>
+        <Wrapper style={{"backgroundImage":"url(https://s3.timeweb.com/24581035-081cc679-ce58-4307-808e-bb42d83baee6/cat.svg)", "backgroundRepeat":"no-repeat", "backgroundAttachment":"fixed", "width":"100%", height:"100%", "top":0, "left":0}}>
             <SnackbarProvider maxSnack={2}>
                 <PageContent>
                     <Stack mt={10} gap={7}>
