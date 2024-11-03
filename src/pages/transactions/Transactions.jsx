@@ -54,7 +54,7 @@ export const Transactions = () => {
                                 <Stack style={{"color": "#717171!important"}}>
                                     {transactions.length !== 0 && transactions.map((transaction) => (
                                             <>
-                                                <Transaction type={transaction.type} date={transaction.date} amount={transaction.amount} fee={transaction.fee}/>
+                                                <Transaction type={transaction.type} date={transaction.date} amount={transaction.amount} fee={transaction.fee} email={transaction.email}/>
                                                 <hr/>
                                             </>
                                         )
