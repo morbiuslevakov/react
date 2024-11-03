@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { Pagination, Stack, Typography } from "@mui/material";
 import {Link, Navigate} from "react-router-dom";
 import { PageContent, Wrapper } from "../../components/auth-pages/Styled";
@@ -6,6 +6,8 @@ import UserContext from "../../context/user-context";
 import { DefaultCard, CardContent } from '../Styled';
 import { SnackbarProvider } from "notistack";
 import { useAdmin } from "../../hooks/use-admin";
+import {BackArrowIcon} from "../wallet/icons/BackArrow";
+import {HeaderMenuItem} from "../../components/header/Styled";
 
 export const Admin = () => {
     const { user } = useContext(UserContext);
@@ -51,6 +53,16 @@ export const Admin = () => {
                     <Stack mt={10} gap={7}>
                         <DefaultCard className={"glass svelte-10w51t0"}>
                             <CardContent style={{"display": "block!important", "alignItems": "left"}}>
+                                <Stack style={{"marginBottom": "30px", "display":"block"}}>
+                                    <Link to="/" style={{"display": "flex", "float": "left"}}>
+                                        <BackArrowIcon/>
+                                    </Link>
+                                </Stack>
+                                <Stack style={{"marginBottom": "30px", "display":"block"}}>
+                                    <HeaderMenuItem to="/transactions" style={{"display": "flex", "float": "left"}}>
+                                        <Typography style={{color: "#004444", textDecoration: "underline"}}>Последние транзакции</Typography>
+                                    </HeaderMenuItem>
+                                </Stack>
                                 {
                                     data.users && data.users.map((el) => (
                                         <Link to={`/admin/${el.email}`}>

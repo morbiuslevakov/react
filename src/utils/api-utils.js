@@ -180,3 +180,13 @@ export const getUserTransactions = async (email, type) => {
         throw error;
     }
 };
+
+export const getLastTransactions = async () => {
+    const url = `${apiUrl}/admin/getLastTransactions`;
+    try {
+        const response = await axios.get(url, apiConfig)
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
