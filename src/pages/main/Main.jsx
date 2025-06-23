@@ -44,7 +44,7 @@ export const Main = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = `https://api.yusra.community/v1/public/info`;
+            const url = `https://api.ysr.community/v1/public/info`;
             try {
                 const response = await axios.get(url, apiConfig)
                 setData(response.data);
